@@ -8,7 +8,7 @@ import Button from '@mui/material/Button';
 import Image from 'next/image';
 import logo from "@/assets/logo.png"
 // icons
-import { IconButton } from '@mui/material';
+import { IconButton, Stack } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import Link from 'next/link';
 
@@ -47,7 +47,7 @@ function Navbar() {
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <Image src={logo} alt="logo" width={200} height={100} />
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex', gap: "10px", marginLeft: "20px" } }}>
+                    <Box className="w-full text-center">
                         {navItems.map((page) => (
                             <Link href={page.pathname} key={page}>
                                 <Button className="text-white">
@@ -57,18 +57,20 @@ function Navbar() {
                         ))}
                     </Box>
                     <Box>
-                        <IconButton>
-                            <FacebookIcon />
-                        </IconButton>
-                        <IconButton>
-                            <FacebookIcon />
-                        </IconButton>
-                        <IconButton>
-                            <FacebookIcon />
-                        </IconButton>
-                        <IconButton>
-                            <FacebookIcon />
-                        </IconButton>
+                        <Stack direction="row" sx={{ "& svg": { color: "white" } }}>
+                            <IconButton>
+                                <FacebookIcon />
+                            </IconButton>
+                            <IconButton>
+                                <FacebookIcon />
+                            </IconButton>
+                            <IconButton>
+                                <FacebookIcon />
+                            </IconButton>
+                            <IconButton>
+                                <FacebookIcon />
+                            </IconButton>
+                        </Stack>
 
                     </Box>
                 </Toolbar>
