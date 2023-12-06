@@ -11,6 +11,7 @@ import logo from "@/assets/logo.png"
 import { IconButton, Stack } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import Link from 'next/link';
+import Header from './Header';
 
 
 const navItems = [
@@ -43,40 +44,43 @@ const navItems = [
 function Navbar() {
 
     return (
-        <AppBar position="static" sx={{ bgcolor: "black" }}>
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
-                    <Link href="/">
-                        <Image src={logo} alt="logo" width={200} height={100} /></Link>
-                    <Box className="w-full text-center">
-                        {navItems.map((page) => (
-                            <Link href={page.pathname} key={page}>
-                                <Button className="text-white">
-                                    {page.route}
-                                </Button>
-                            </Link>
-                        ))}
-                    </Box>
-                    <Box>
-                        <Stack direction="row" sx={{ "& svg": { color: "white" } }}>
-                            <IconButton>
-                                <FacebookIcon />
-                            </IconButton>
-                            <IconButton>
-                                <FacebookIcon />
-                            </IconButton>
-                            <IconButton>
-                                <FacebookIcon />
-                            </IconButton>
-                            <IconButton>
-                                <FacebookIcon />
-                            </IconButton>
-                        </Stack>
+        <>
+            <Header></Header>
+            <AppBar position="static" sx={{ bgcolor: "black" }}>
+                <Container maxWidth="xl">
+                    <Toolbar disableGutters>
+                        <Link href="/">
+                            <Image src={logo} alt="logo" width={200} height={100} /></Link>
+                        <Box className="w-full text-center">
+                            {navItems.map((page) => (
+                                <Link href={page.pathname} key={page}>
+                                    <Button className="text-white">
+                                        {page.route}
+                                    </Button>
+                                </Link>
+                            ))}
+                        </Box>
+                        <Box>
+                            <Stack direction="row" sx={{ "& svg": { color: "white" } }}>
+                                <IconButton>
+                                    <FacebookIcon />
+                                </IconButton>
+                                <IconButton>
+                                    <FacebookIcon />
+                                </IconButton>
+                                <IconButton>
+                                    <FacebookIcon />
+                                </IconButton>
+                                <IconButton>
+                                    <FacebookIcon />
+                                </IconButton>
+                            </Stack>
 
-                    </Box>
-                </Toolbar>
-            </Container>
-        </AppBar>
+                        </Box>
+                    </Toolbar>
+                </Container>
+            </AppBar>
+        </>
     );
 }
 export default Navbar;
