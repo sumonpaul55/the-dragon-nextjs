@@ -6,7 +6,7 @@ import { getNewDayMonthDateYear } from '@/utils/getCurrentTime';
 const Header = () => {
     const todyastime = getNewDayMonthDateYear();
     return (
-        <Box className="py-2 w-full text-center">
+        <Box className="py-5 w-full text-center">
             <Container>
                 <Image src={headingImage} height={100} alt='the Dragon news' width={300} className='mx-auto' />
                 <Typography color="gray" variant="body2" textAlign="center">Journalism Without Fear or Favour</Typography>
